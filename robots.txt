@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://clerb.co.uk/sitemap.xml
