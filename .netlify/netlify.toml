@@ -1,6 +1,4 @@
 plugins = []
-headers = []
-redirects = []
 
 [functions]
 
@@ -23,3 +21,27 @@ publishOrigin = "default"
 [build.processing.js]
 
 [build.services]
+
+[[headers]]
+for = "/*"
+
+[headers.values]
+X-Content-Type-Options = "nosniff"
+X-Frame-Options = "DENY"
+Referrer-Policy = "strict-origin-when-cross-origin"
+Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+Cross-Origin-Opener-Policy = "same-origin"
+Cross-Origin-Resource-Policy = "same-origin"
+Cross-Origin-Embedder-Policy = "require-corp"
+
+[[redirects]]
+from = "https://www.clerb.co.uk/*"
+to = "https://clerb.co.uk/:splat"
+status = 301.0
+force = true
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
